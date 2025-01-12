@@ -1,0 +1,61 @@
+body::-webkit-scrollbar {
+  width: "8px";
+}
+body::-webkit-scrollbar-thumb {
+  backgroundColor: "#888";
+  borderRadius: "4px";
+}
+body::-webkit-scrollbar-thumb:hover{
+  backgroundColor: "#555";
+}
+body::-webkit-scrollbar-track{
+  backgroundColor: "#f1f1f1";
+}
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border: 1px solid #f1f1f1;
+}
+
+/* TableStyles.css */
+.table-container {
+  overflow-x: auto; /* Make table scrollable horizontally if needed */
+}
+
+.custom-table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #ffffff; /* White background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Custom shadow */
+  overflow: hidden; /* Clip content to border radius */
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #ddd; /* Light gray border */
+  padding: 12px 16px; /* Padding inside cells */
+  text-align: left; /* Align text to the left */
+}
+
+.custom-table th {
+  background-color: #f3f4f6; /* Light gray header background */
+  color: #4b5563; /* Text color for header */
+  font-weight: bold;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #f9fafb; /* Slightly lighter gray on hover */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f8fafc; /* Alternate row color */
+}
+
+.custom-table tbody tr:nth-child(odd) {
+  background-color: #ffffff; /* White row background */
+}
+
+.custom-table tbody td:first-child {
+  font-weight: 600; /* Bold first column */
+}
