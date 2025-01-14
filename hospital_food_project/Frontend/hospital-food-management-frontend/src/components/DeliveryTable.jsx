@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { FaCheckCircle, FaCalendarAlt } from "react-icons/fa";  // For icons
+import React, { useEffect, useState } from "react";
+import { FaCalendarAlt } from "react-icons/fa"; // For icons
 
 const DeliveryTable = () => {
   const [deliveries, setDeliveries] = useState([]);
@@ -10,7 +10,7 @@ const DeliveryTable = () => {
   useEffect(() => {
     const fetchDeliveries = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/deliveries/");
+        const response = await axios.get("https://hospital-food-project-backend.onrender.com/api/deliveries/");
         setDeliveries(response.data);
       } catch (err) {
         console.error("Error fetching deliveries:", err);
@@ -19,7 +19,7 @@ const DeliveryTable = () => {
 
     const fetchAnalytics = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/analytics/delivery-analytics");
+        const response = await axios.get("https://hospital-food-project-backend.onrender.com/api/analytics/delivery-analytics");
         setAnalytics(response.data);
       } catch (err) {
         console.error("Error fetching analytics:", err);
@@ -47,7 +47,7 @@ const DeliveryTable = () => {
   // Update delivery status
   const handleUpdateStatus = async (deliveryId, newStatus) => {
     try {
-      const response = await axios.put(`http://localhost:5000/api/deliveries/status/${deliveryId}`, {
+      const response = await axios.put(`https://hospital-food-project-backend.onrender.com/api/deliveries/status/${deliveryId}`, {
         status: newStatus,
       });
       alert(response.data.message); // Notify on success

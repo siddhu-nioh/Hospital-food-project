@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const MealAssignmentTable = () => {
   const [assignments, setAssignments] = useState([]);
@@ -10,7 +10,7 @@ const MealAssignmentTable = () => {
   // Fetch meal assignments
   const fetchAssignments = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/pantry/assignments");
+      const response = await axios.get("https://hospital-food-project-backend.onrender.com/api/pantry/assignments");
       setAssignments(response.data);
     } catch (error) {
       console.error("Error fetching meal assignments:", error);
@@ -26,7 +26,7 @@ const MealAssignmentTable = () => {
   const updateAssignment = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/pantry/update-status/${editingAssignment._id}`,
+        `https://hospital-food-project-backend.onrender.com/api/pantry/update-status/${editingAssignment._id}`,
         { preparationStatus: updatedStatus, notes: updatedNotes }
       );
 

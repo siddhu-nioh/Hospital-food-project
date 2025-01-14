@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const DeliveryPersonnelTable = ({ onDelete }) => {
   
   const [personnel, setPersonnel] = useState([]);
   const fetchPersonnel = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/delivery-personnel");
+      const response = await axios.get("https://hospital-food-project-backend.onrender.com/api/delivery-personnel");
       setPersonnel(response.data);
     } catch (error) {
       console.error("Error fetching delivery personnel:", error);
@@ -18,7 +18,7 @@ const DeliveryPersonnelTable = ({ onDelete }) => {
 
   const handleDeletePersonnel = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/delivery-personnel/${id}`);
+      await axios.delete(`https://hospital-food-project-backend.onrender.com/api/delivery-personnel/${id}`);
       fetchPersonnel(); // Refresh the list after deletion
       if (onDelete) onDelete(); // Optional callback for parent updates
     } catch (error) {

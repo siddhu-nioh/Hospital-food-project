@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Dialog, Box, Button, TextField, MenuItem, Select, FormControl, InputLabel } from "@mui/material";
+import { Box, Button, Dialog, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 const CreateOrUpdatePatientModal = ({ patient, onClose }) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -50,11 +50,11 @@ const CreateOrUpdatePatientModal = ({ patient, onClose }) => {
       // Create or update patient based on the presence of `patient` prop
       if (patient) {
         // Update existing patient
-        const response = await axios.put(`http://localhost:5000/api/patients/${patient._id}`, formattedData);
+        const response = await axios.put(`https://hospital-food-project-backend.onrender.com/api/patients/${patient._id}`, formattedData);
         console.log("Patient updated:", response.data);
       } else {
         // Create new patient
-        const response = await axios.post("http://localhost:5000/api/patients", formattedData);
+        const response = await axios.post("https://hospital-food-project-backend.onrender.com/api/patients", formattedData);
         console.log("New patient created:", response.data);
       }
        // Call onSubmit callback to refresh the patient list or take other actions

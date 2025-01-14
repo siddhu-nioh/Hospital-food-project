@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5000/api"; // Update this with your backend URL.
+const API_BASE_URL = "https://hospital-food-project-backend.onrender.com/api"; // Update this with your backend URL.
 
 export const api = axios.create({
   baseURL: API_BASE_URL,

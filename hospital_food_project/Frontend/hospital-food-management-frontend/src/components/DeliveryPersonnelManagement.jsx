@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const DeliveryPersonnelManagement = () => {
   const [personnel, setPersonnel] = useState([]);
@@ -8,7 +8,7 @@ const DeliveryPersonnelManagement = () => {
 
   const fetchPersonnel = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/delivery-personnel");
+      const response = await axios.get("https://hospital-food-project-backend.onrender.com/api/delivery-personnel");
       setPersonnel(response.data);
     } catch (error) {
       console.error("Error fetching delivery personnel:", error);
@@ -22,7 +22,7 @@ const DeliveryPersonnelManagement = () => {
   const handleAddPersonnel = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/delivery-personnel", { name, contactInfo });
+      await axios.post("https://hospital-food-project-backend.onrender.com/api/delivery-personnel", { name, contactInfo });
       fetchPersonnel();
       setName("");
       setContactInfo("");
@@ -34,7 +34,7 @@ const DeliveryPersonnelManagement = () => {
 
   const handleDeletePersonnel = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/delivery-personnel/${id}`);
+      await axios.delete(`https://hospital-food-project-backend.onrender.com/api/delivery-personnel/${id}`);
       fetchPersonnel();
     } catch (error) {
       console.error("Error deleting personnel:", error);

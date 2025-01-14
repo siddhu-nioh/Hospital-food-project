@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import axios from "axios";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import "./LoginForm.css";
 
@@ -11,7 +11,7 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", { email, password });
+      const res = await axios.post("https://hospital-food-project-backend.onrender.com/api/auth/login", { email, password });
       localStorage.setItem("token", res.data.token);
 
       // Decode the token to get the role

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { updateDietChart, deleteDietChart } from "../api/api";
+import React, { useEffect, useState } from "react";
+import { deleteDietChart, updateDietChart } from "../api/api";
 
 const DietChartTable = () => {
   const [dietCharts, setDietCharts] = useState([]);
@@ -17,7 +17,7 @@ const DietChartTable = () => {
  
     const fetchDietCharts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/diet-charts");
+        const res = await axios.get("https://hospital-food-project-backend.onrender.com/api/diet-charts");
         setDietCharts(res.data);
       } catch (err) {
         console.error("Error fetching diet charts:", err);

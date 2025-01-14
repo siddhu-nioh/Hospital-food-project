@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const MealAssignmentForm = () => {
   const [pantryStaff, setPantryStaff] = useState([]);
@@ -15,9 +15,9 @@ const MealAssignmentForm = () => {
   const fetchData = async () => {
     try {
       const [staffRes, dietChartsRes, assignmentsRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/pantry/pantryStaff"), // Fetch pantry staff
-        axios.get("http://localhost:5000/api/diet-charts"), // Fetch diet charts
-        axios.get("http://localhost:5000/api/pantry/assignments"), // Fetch meal assignments
+        axios.get("https://hospital-food-project-backend.onrender.com/api/pantry/pantryStaff"), // Fetch pantry staff
+        axios.get("https://hospital-food-project-backend.onrender.com/api/diet-charts"), // Fetch diet charts
+        axios.get("https://hospital-food-project-backend.onrender.com/api/pantry/assignments"), // Fetch meal assignments
       ]);
       setPantryStaff(staffRes.data);
       setDietCharts(dietChartsRes.data);
@@ -41,7 +41,7 @@ const MealAssignmentForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/pantry/assign-meal", {
+      const response = await axios.post("https://hospital-food-project-backend.onrender.com/api/pantry/assign-meal", {
         pantryStaffId: formData.pantryStaffId,
         dietChartId: formData.dietChartId,
         notes: formData.notes,

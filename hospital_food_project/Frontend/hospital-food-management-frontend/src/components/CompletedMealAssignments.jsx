@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const CompletedMealAssignments = () => {
   const [assignments, setAssignments] = useState([]);
@@ -10,7 +10,7 @@ const CompletedMealAssignments = () => {
   // Fetch completed meal assignments
   const fetchCompletedAssignments = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/pantry/assignments/unassigned");
+      const response = await axios.get("https://hospital-food-project-backend.onrender.com/api/pantry/assignments/unassigned");
       const completedAssignments = response.data.filter(
         (assignment) => assignment.preparationStatus === "Completed"
       );
@@ -23,7 +23,7 @@ const CompletedMealAssignments = () => {
   // Fetch delivery personnel
   const fetchPersonnel = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/delivery-personnel");
+      const response = await axios.get("https://hospital-food-project-backend.onrender.com/api/delivery-personnel");
       setPersonnel(response.data);
     } catch (error) {
       console.error("Error fetching delivery personnel:", error);
@@ -38,7 +38,7 @@ const CompletedMealAssignments = () => {
         return;
       }
 
-      await axios.post("http://localhost:5000/api/pantry/assign-to-delivery-personnel", {
+      await axios.post("https://hospital-food-project-backend.onrender.com/api/pantry/assign-to-delivery-personnel", {
         assignmentId: selectedAssignment._id,
         deliveryPersonnelId: selectedPersonnel,
       });

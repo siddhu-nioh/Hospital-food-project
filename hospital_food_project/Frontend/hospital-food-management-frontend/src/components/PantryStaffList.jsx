@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const PantryStaffList = () => {
   const [pantryStaff, setPantryStaff] = useState([]);
@@ -8,7 +8,7 @@ const PantryStaffList = () => {
 
   const fetchPantryStaff = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/pantry/pantryStaff");
+      const response = await axios.get("https://hospital-food-project-backend.onrender.com/api/pantry/pantryStaff");
       setPantryStaff(response.data);
     } catch (error) {
       console.error("Error fetching pantry staff:", error);
@@ -17,7 +17,7 @@ const PantryStaffList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/pantry/pantryStaff/${id}`);
+      await axios.delete(`https://hospital-food-project-backend.onrender.com/api/pantry/pantryStaff/${id}`);
       alert("Pantry staff deleted successfully");
       fetchPantryStaff(); // Refresh list
     } catch (error) {
@@ -27,7 +27,7 @@ const PantryStaffList = () => {
 
   const handleUpdate = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/pantry/pantryStaff/${id}`, formData);
+      await axios.put(`https://hospital-food-project-backend.onrender.com/api/pantry/pantryStaff/${id}`, formData);
       alert("Pantry staff updated successfully");
       setEditMode(null); // Exit edit mode
       fetchPantryStaff(); // Refresh list

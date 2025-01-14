@@ -10,7 +10,7 @@ const DeliveryTableManager = () => {
   useEffect(() => {
     const fetchDeliveries = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/deliveries/");
+        const response = await axios.get("https://hospital-food-project-backend.onrender.com/api/deliveries/");
         setDeliveries(response.data);
       } catch (err) {
         console.error("Error fetching deliveries:", err);
@@ -19,7 +19,7 @@ const DeliveryTableManager = () => {
 
     const fetchAnalytics = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/analytics/delivery-analytics");
+        const response = await axios.get("https://hospital-food-project-backend.onrender.com/api/analytics/delivery-analytics");
         setAnalytics(response.data);
       } catch (err) {
         console.error("Error fetching analytics:", err);
@@ -48,7 +48,7 @@ const DeliveryTableManager = () => {
   const handleUpdateStatus = async (deliveryId, newStatus) => {
     try {
 
-        const response = await axios.put(`http://localhost:5000/api/deliveries/status/${deliveryId}`, {
+        const response = await axios.put(`https://hospital-food-project-backend.onrender.com/api/deliveries/status/${deliveryId}`, {
         status: newStatus,
       });
 

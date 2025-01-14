@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const PantryStaffModal = ({ onClose }) => {
   const [name, setName] = useState("");
@@ -10,7 +10,7 @@ const PantryStaffModal = ({ onClose }) => {
   // Fetch pantry staff list
   const fetchPantryStaff = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/pantry/pantryStaff");
+      const response = await axios.get("https://hospital-food-project-backend.onrender.com/api/pantry/pantryStaff");
       setPantryStaffList(response.data);
     } catch (error) {
       alert("Failed to fetch pantry staff");
@@ -20,7 +20,7 @@ const PantryStaffModal = ({ onClose }) => {
   // Add a new pantry staff
   const handleSubmit = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/pantry/pantryStaff", {
+      const response = await axios.post("https://hospital-food-project-backend.onrender.com/api/pantry/pantryStaff", {
         name,
         contactInfo,
         location,
