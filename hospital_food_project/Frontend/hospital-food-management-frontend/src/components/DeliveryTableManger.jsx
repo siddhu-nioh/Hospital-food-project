@@ -71,7 +71,7 @@ const DeliveryTableManager = () => {
       <div className="flex space-x-6 mb-8">
         {/* Analytics Box */}
         <div>
-        <div className="card flex items-center justify-between p-4  rounded-lg shadow-2xl border-indigo-400 w-64">
+        <div className="card flex items-center justify-between p-4  rounded-lg  border-indigo-400 w-64">
           <div className="text-center">
             <div className="flex space-x-2 ">
             <FaCalendarAlt size={32} className="text-blue-800 mb-2" />

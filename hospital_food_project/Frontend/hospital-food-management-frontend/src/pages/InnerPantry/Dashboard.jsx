@@ -5,7 +5,7 @@ import DeliveryPersonnelManagement from "../../components/DeliveryPersonnelManag
 import DeliveryPersonnelDashboard from "../DeliveryPersonnel/Dashboard";
 import DeliveryPersonnelTable from "../../components/DeliveryPeronneltable";
 import CompletedMealAssignments from "../../components/CompletedMealAssignments"; // New component for completed meal assignments
-import DeliveryTable from "../../components/DeliveryTable";
+import DeliveryTableManger from "../../components/DeliveryTableManger";
 import LogoutButton from "../../components/LogoutBuuton";
 
 const InnerPantryDashboard = () => {
@@ -20,13 +20,12 @@ const InnerPantryDashboard = () => {
 
   return (
     <div className="">
-      <h1 className="text-3xl font-bold mb-6 p-4 text-center bg-black text-white shadow-l hover:shadow-xl focus:shadow-xl shadow-blue-500/50">Inner Pantry Dashboard</h1>
-      
-      <div className="flex flex-wrap justify-center mb-6 space-x-36">
+      <h1 className="text-3xl font-bold mb-6 p-4 text-center bg-black text-white shadow-l hover:shadow-xl focus:shadow-xl shadow-blue-500/50text-3xl font-bold mb-6 p-4 text-center bg-black text-white shadow-l hover:shadow-xl focus:shadow-xl shadow-blue-500/50">Inner Pantry Dashboard</h1>
+      <div className="px-6 flex space-x-8">
       {/* Button to manage delivery personnel */}
       <button
         onClick={openDeliveryModal}
-        className="bg-blue-500 text-white px-6 py-2 rounded mb-4"
+        className="bg-blue-500 text-white px-4 py-2 rounded mb-4"
       >
         Manage Delivery Personnel
       </button>
@@ -38,19 +37,30 @@ const InnerPantryDashboard = () => {
       >
         Assign Completed Meal to Delivery
       </button>
-
+      
       <LogoutButton/>
       </div>
+      <div className="px-6  flex wrap space-x-6 mt-4"> <DeliveryTableManger/>
+      <div className="px-6 mt-40 max-w-xl">
+      <h1 className="text-2xl font-bold mb-4">Pantry Staff List</h1>
+      <PantryStaffList />
+      </div>
+
+      </div>
+     
       {/* Pantry Staff List */}
-      <div className="max-w-82"><h2>pantry staff list</h2><PantryStaffList /></div>
-      <CompletedMealAssignments />
       
+      <div className="px-6 mt-3">
+
+      <h1 className="text-2xl font-bold mb-4">DeliveryPersonnel list</h1>
       {/* Delivery Personnel Table */}
       <DeliveryPersonnelTable />
-
+</div>
       {/* Meal Assignment Table */}
+      <div className="px-6 mt-3">
+      <h1 className="text-2xl font-bold mb-4">Meal Assignments</h1>
       <MealAssignmentTable />
-      <DeliveryTable/>
+      </div>
       {/* Modal for Delivery Personnel Management */}
       {isDeliveryModalOpen && (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
@@ -80,7 +90,7 @@ const InnerPantryDashboard = () => {
             <h2 className="text-2xl font-bold mb-4">Assign Completed Meal to Delivery Personnel</h2>
 
             {/* Completed Meal Assignments Component */}
-            
+            <CompletedMealAssignments />
 
             {/* Optionally, add functionality for assigning completed meal to delivery */}
           </div>
