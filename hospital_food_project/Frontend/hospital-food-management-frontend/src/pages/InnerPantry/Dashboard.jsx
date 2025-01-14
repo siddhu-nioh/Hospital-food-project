@@ -19,13 +19,14 @@ const InnerPantryDashboard = () => {
   const closeMealAssignmentModal = () => setIsMealAssignmentModalOpen(false); // Close meal assignment modal
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Inner Pantry Dashboard</h1>
-
+    <div className="">
+      <h1 className="text-3xl font-bold mb-6 p-4 text-center bg-black text-white shadow-l hover:shadow-xl focus:shadow-xl shadow-blue-500/50">Inner Pantry Dashboard</h1>
+      
+      <div className="flex flex-wrap justify-center mb-6 space-x-36">
       {/* Button to manage delivery personnel */}
       <button
         onClick={openDeliveryModal}
-        className="bg-blue-500 text-white px-4 py-2 rounded mb-4"
+        className="bg-blue-500 text-white px-6 py-2 rounded mb-4"
       >
         Manage Delivery Personnel
       </button>
@@ -37,9 +38,12 @@ const InnerPantryDashboard = () => {
       >
         Assign Completed Meal to Delivery
       </button>
+
       <LogoutButton/>
+      </div>
       {/* Pantry Staff List */}
-      <PantryStaffList />
+      <div className="max-w-82"><h2>pantry staff list</h2><PantryStaffList /></div>
+      <CompletedMealAssignments />
       
       {/* Delivery Personnel Table */}
       <DeliveryPersonnelTable />
@@ -76,7 +80,7 @@ const InnerPantryDashboard = () => {
             <h2 className="text-2xl font-bold mb-4">Assign Completed Meal to Delivery Personnel</h2>
 
             {/* Completed Meal Assignments Component */}
-            <CompletedMealAssignments />
+            
 
             {/* Optionally, add functionality for assigning completed meal to delivery */}
           </div>

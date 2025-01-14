@@ -186,3 +186,72 @@ body::-webkit-scrollbar-track{
     min-height: 50vh;
   }
 }
+/* General h2 styling */
+h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #2c3e50; /* Deep navy blue */
+  margin-bottom: 16px;
+  border-bottom: 2px solid #3498db; /* Blue underline */
+  padding-bottom: 8px;
+}
+
+/* General button styling */
+button {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.8rem;
+  /* font-weight: 400; */
+  color: white;
+  /* padding: 10px 16px; */
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover and active styles */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific button colors */
+button.bg-blue-500 {
+  background-color: #3498db;
+}
+button.bg-blue-500:hover {
+  background-color: #2980b9;
+}
+
+button.bg-green-500 {
+  background-color: #2ecc71;
+}
+button.bg-green-500:hover {
+  background-color: #27ae60;
+}
+
+button.bg-yellow-500 {
+  background-color: #f1c40f;
+}
+button.bg-yellow-500:hover {
+  background-color: #f39c12;
+}
+
+button.bg-purple-500 {
+  background-color: #9b59b6;
+}
+button.bg-purple-500:hover {
+  background-color: #8e44ad;
+}
+
+button.bg-red-500 {
+  background-color: #e74c3c;
+}
+button.bg-red-500:hover {
+  background-color: #c0392b;
+}
