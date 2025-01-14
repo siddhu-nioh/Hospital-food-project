@@ -21,7 +21,7 @@ const InnerPantryDashboard = () => {
   return (
     <div className="">
       <h1 className="text-3xl font-bold mb-6 p-4 text-center bg-black text-white shadow-l hover:shadow-xl focus:shadow-xl shadow-blue-500/50text-3xl font-bold mb-6 p-4 text-center bg-black text-white shadow-l hover:shadow-xl focus:shadow-xl shadow-blue-500/50">Inner Pantry Dashboard</h1>
-      <div className="px-6 flex space-x-8">
+      <div className="px-6 flex space-x-96">
       {/* Button to manage delivery personnel */}
       <button
         onClick={openDeliveryModal}
@@ -40,7 +40,7 @@ const InnerPantryDashboard = () => {
       
       <LogoutButton/>
       </div>
-      <div className="px-6  flex wrap space-x-6 mt-4"> <DeliveryTableManger/>
+      <div className="px-6  flex wrap space-x-20 mt-4"> <DeliveryTableManger/>
       <div className="px-6 mt-40 max-w-xl">
       <h1 className="text-2xl font-bold mb-4">Pantry Staff List</h1>
       <PantryStaffList />
@@ -50,14 +50,14 @@ const InnerPantryDashboard = () => {
      
       {/* Pantry Staff List */}
       
-      <div className="px-6 mt-3">
+      <div className="px-6 mt-3 mb-8">
 
       <h1 className="text-2xl font-bold mb-4">DeliveryPersonnel list</h1>
       {/* Delivery Personnel Table */}
       <DeliveryPersonnelTable />
 </div>
       {/* Meal Assignment Table */}
-      <div className="px-6 mt-3">
+      <div className="px-6 mt-3 mb-8">
       <h1 className="text-2xl font-bold mb-4">Meal Assignments</h1>
       <MealAssignmentTable />
       </div>
@@ -71,7 +71,7 @@ const InnerPantryDashboard = () => {
             >
               &times;
             </button>
-            <h2 className="text-2xl font-bold mb-4">Delivery Personnel Management</h2>
+            <h2 className="text-2xl font-bold mb-3">Delivery Personnel Management</h2>
             <DeliveryPersonnelManagement />
           </div>
         </div>
